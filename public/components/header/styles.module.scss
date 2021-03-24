@@ -1,0 +1,58 @@
+@import '../../../styles/global.module.scss';
+
+.header {
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 40px 16px;
+
+  &__icons_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 10px;
+    align-items: center;
+
+    a {
+      height: 30px;
+      width: 30px;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      transition: 0.3s;
+
+
+      &:hover svg path {
+        fill: $main-yellow;
+      }
+    }
+  }
+
+  &__menu {
+    max-width: 570px;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 32px;
+
+    a {
+      font-family: 'Roboto', 'serif';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 50px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+
+      &:hover {
+        color: $main-yellow;
+      }
+    }
+  }
+
+  &__logo {
+    display: grid;
+    justify-items: end;
+    align-items: center;
+  }
+}

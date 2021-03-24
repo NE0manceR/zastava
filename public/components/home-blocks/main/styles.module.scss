@@ -1,0 +1,268 @@
+@import '../../../../styles/global.module.scss';
+
+.main {
+  max-width: 1170px;
+  margin: 0 auto;
+  background: url('../../../img//main/tram.png') no-repeat;
+  background-size: 120%;
+  background-position: center;
+  position: relative;
+  padding-top: 260px;
+  background-position-y: -60px;
+
+  &::after {
+    position: absolute;
+    right: -455px;
+    top: 0;
+    content: url('../../../img/main/wing.png');
+  }
+
+  &__scroll {
+    position: absolute;
+    justify-self: center;
+    transform: translateY(377px);
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      path {
+        fill: $main-yellow;
+      }
+    }
+  }
+
+ &__sv {
+   align-self: center;
+   justify-self: center;
+ }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    padding-bottom: 80px;
+
+  }
+
+  &__club {
+    grid-column: 1/13;
+    display: grid;
+    grid-template-columns: max-content max-content 240px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__emblem {
+    max-width: 200px;
+    transform: translateY(-50px);
+  }
+
+  &__club_name {
+    display: grid;
+    justify-content: start;
+    justify-items: center;
+
+
+
+    span {
+      font-family: 'Montserrat', 'serif';
+      font-style: italic;
+      line-height: 60px;
+      text-transform: uppercase;
+
+
+    }
+
+    span:nth-child(1) {
+      font-weight: 800;
+      font-size: 70px;
+      color: #000000;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: $main-yellow;
+        left: -8px;
+        z-index: -1;
+        top: -12px;
+        padding: 0 12px;
+        transform: skew(-10deg, 0deg);
+      }
+    }
+
+    span:nth-child(2) {
+
+      font-weight: 800;
+      font-size: 70px;
+      color: #FFFFFF;
+      z-index: 1;
+      position: relative;
+      padding: 0 10px;
+      margin-bottom: 20px;
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        left: -8px;
+        z-index: -1;
+        top: -12px;
+        padding: 0 6px;
+        transform: skew(-10deg, 0deg);
+      }
+    }
+
+    span:nth-child(3) {
+      font-family: 'Montserrat', 'serif';
+      font-weight: bold;
+      font-size: 16px;
+      align-items: center;
+      color: #FFFFFF;
+      justify-self: start;
+      margin-left: 20px;
+    }
+  }
+
+  &__match {
+    grid-column: 1/13;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+  }
+
+  &__link_to {
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    justify-content: space-between;
+    gap: 50px;
+    align-content: end;
+
+    div {
+
+      span {
+        font-family: 'Roboto', 'serif';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__shape {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    background: url('/img/main/shape.svg') no-repeat;
+    background-size: cover;
+    justify-self: center;
+
+    span {
+      z-index: 2;
+      font-family: 'Montserrat', 'serif';
+      font-style: italic;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+
+  &__time {
+    width: 370px;
+    background: url('/img/main/time-bg.svg') no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    justify-content: space-between;
+    padding: 0 15px;
+    justify-self: end;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+
+  &__decor_line {
+    font-family: 'Montserrat', 'serif';
+    font-style: italic;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $main-yellow;
+      width: 1.5px;
+      height: 60%;
+      right: 18px;
+      top: 6px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $main-yellow;
+      width: 1.5px;
+      height: 60%;
+      top: 6px;
+      left: 18px;
+
+    }
+  }
+
+  &__teams {
+    display: grid;
+    grid-auto-rows: max-content;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 170px 40px 170px;
+    justify-content: end;
+
+  }
+
+  &__card {
+    height: 240px;
+    background: url('/img/main/teamCard/bcg-white.svg') no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-items: center;
+    padding: 20px;
+
+    img {
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    span {
+      font-family: 'Montserrat', 'serif';
+      font-style: italic;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #000000;
+      align-self: end;
+    }
+  }
+
+}
