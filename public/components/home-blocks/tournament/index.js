@@ -83,7 +83,7 @@ let dataGame = [
 		tournament: "Чемпионат России Премьер-Лига",
 		tour: "IV",
 	},
-  {
+	{
 		id: 6,
 		matchStarted: true,
 		time: "24.04",
@@ -99,7 +99,7 @@ let dataGame = [
 		tournament: "Чемпионат России Премьер-Лига",
 		tour: "IV",
 	},
-  {
+	{
 		id: 7,
 		matchStarted: true,
 		time: "24.04",
@@ -132,7 +132,11 @@ export default function Tournament() {
 						Список<br></br>матчей
 					</span>
 					<button
-          >Смотреть все</button>
+						onClick={() => {
+							props.change();
+						}}>
+						Смотреть все
+					</button>
 				</div>
 			</div>
 			<div className={styles.tournament__filters}>
@@ -160,6 +164,7 @@ export default function Tournament() {
 						totalScoreTeam1,
 						totalScoreTeam2,
 						team2,
+            town2,
 						infoDate,
 						infoTime,
 						stadium,
@@ -168,23 +173,23 @@ export default function Tournament() {
 					}) => {
 						return (
 							<Fragment key={id}>
-                <Score
-								id={id}
-								matchStarted={matchStarted}
-								time={time}
-								team1={team1}
-								town1={town1}
-                town2={town2}
-								totalScoreTeam1={totalScoreTeam1}
-								totalScoreTeam2={totalScoreTeam2}
-								team2={team2}
-								infoDate={infoDate}
-								infoTime={infoTime}
-								stadium={stadium}
-								tournament={tournament}
-								tour={tour}
-							/>
-              </Fragment>
+								<Score
+									id={id}
+									matchStarted={matchStarted}
+									time={time}
+									team1={team1}
+									town1={town1}
+									town2={town2}
+									totalScoreTeam1={totalScoreTeam1}
+									totalScoreTeam2={totalScoreTeam2}
+									team2={team2}
+									infoDate={infoDate}
+									infoTime={infoTime}
+									stadium={stadium}
+									tournament={tournament}
+									tour={tour}
+								/>
+							</Fragment>
 						);
 					}
 				)}

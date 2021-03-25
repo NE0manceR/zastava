@@ -4,11 +4,16 @@ import Tournament from "../../public/components/home-blocks/tournament";
 
 export default function Home() {
 
+function change() {
+	console.log('changed');
+	
+}
+
 	return (
 		<div>
 			<Header />
 			<Main/>
-			<Tournament/>
+			<Tournament change={change}/>
 		</div>
 	);
 }
