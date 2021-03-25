@@ -131,7 +131,8 @@ export default function Tournament() {
 					<span>
 						Список<br></br>матчей
 					</span>
-					<button>Смотреть все</button>
+					<button
+          >Смотреть все</button>
 				</div>
 			</div>
 			<div className={styles.tournament__filters}>
@@ -173,6 +174,7 @@ export default function Tournament() {
 								time={time}
 								team1={team1}
 								town1={town1}
+                town2={town2}
 								totalScoreTeam1={totalScoreTeam1}
 								totalScoreTeam2={totalScoreTeam2}
 								team2={team2}
